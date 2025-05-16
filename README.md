@@ -1,4 +1,4 @@
-# Resume-To-Job-Matcher
+# Resume To Job Matcher Streamlit App
 This is a Simple NLP project using spaCy library of python that matches resumes sent and saved in a json file with job opportunities
 
 ## 🔍 Overview

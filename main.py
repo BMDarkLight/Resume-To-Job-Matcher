@@ -5,11 +5,18 @@ import numpy as np
 
 nlp = spacy.load("en_core_web_lg")
 
-with open("resumes.json", "r", encoding="utf-8") as resumes_file:
-    resumes = json.load(resumes_file)
+@st.cache_data
+def load_resumes():
+    with open("resumes.json", "r", encoding="utf-8") as file:
+        return json.load(file)
 
-with open("job_opportunities.json", "r", encoding="utf-8") as jobs_file:
-    jobs = json.load(jobs_file)
+@st.cache_data
+def load_job_opportunities():
+    with open("job_opportunities.json", "r", encoding="utf-8") as file:
+        return json.load(file)
+
+resumes = load_resumes()
+jobs = load_job_opportunities()
 
 st.title("NLP Resume-to-Job Matcher")
 
